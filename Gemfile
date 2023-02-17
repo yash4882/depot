@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+gem 'ransack'
+gem 'bcrypt', '~> 3.1.7'

@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  skip_before_action :authorize, only: :create
   include CurrentCart
   before_action :set_cart, only: [:create]
   before_action :set_line_item, only: %i[ show edit update destroy ]
@@ -17,6 +18,7 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.new
   end
 
+
   # GET /line_items/1/edit
   def edit
   end
@@ -25,11 +27,12 @@ class LineItemsController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
-    @line_item = @cart.line_items.build(product: product)
+    # @line_item = @cart.line_items.build(product: product)
   
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to cart_url(@line_item.cart) }
+        format.turbo_stream { @current_item = @line_item }
+        format.html { redirect_to store_index_url }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -57,6 +60,15 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to line_items_url, notice: "Line item was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  def item_delete
+    @line_item = LineItem.find(params[:id])
+    @line_item.destroy
+    respond_to do |format|
+      format.html { redirect_to store_index_url, notice: "Line item was successfully destroyed." }
       format.json { head :no_content }
     end
   end
