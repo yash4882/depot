@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
+
+  resources :support_requests, only: [ :index, :update ]
+  
   resources :users
   resources :orders
  
