@@ -32,7 +32,6 @@
 en:
   hello: "Hello world"
 
-en:
   layouts:
     application:
       title: "The Pragmatic Bookshelf"
@@ -41,24 +40,18 @@ en:
       news: "News"
       contact: "Contact"
 
-
-en:
   store:
     index:
       title_html: "Your Pragmatic Catalog"
     product:
       add_html: "Add to Cart"
 
-
-en:
   carts:
     cart:
       title: "Your Cart"
       empty: "Empty cart"
       checkout: "Checkout"
 
-
-en:
   number:
     currency:
       format:
@@ -68,7 +61,6 @@ en:
         delimiter: ","
         format: "%u%n"
 
-en:
   orders:
     new:
       legend: "Please Enter Your Details"
@@ -93,6 +85,5 @@ en:
       po:
         po_number: "PO #"
 
-  en:
     thanks: "Thank you for your order"
 
