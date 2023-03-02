@@ -1,7 +1,8 @@
 <div class="w-full">
-<h1 class="mx-auto text-lg font-bold text-4xl">Welcome</h1>
-<p>
-It's <%= Time.now %>.
-We have <%= pluralize(@total_orders, "order") %>.
-</p>
+	<h1 class="mx-auto text-lg font-bold text-4xl">Welcome</h1>
+	<p>
+		It's <%= Time.now %>.
+		We have <%= pluralize(@total_orders, "order") %>.
+	</p>
+	 <%= link_to 'Products', store_index_path %>
 </div>
