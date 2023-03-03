@@ -1,0 +1,6 @@
+<script type="text/javascript">
+  const paymentSessionId = "<%= @secret%>";  
+  const cf = new Cashfree(paymentSessionId);
+  alert("<%= @secret %>initiated");
+  cf.redirect();
+</script>
