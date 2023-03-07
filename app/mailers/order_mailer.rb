@@ -1,6 +1,6 @@
 class OrderMailer < ApplicationMailer
   
-  default from: 'yvasundhariya@blubirch.com'
+  default from: 'sahilshaikh@blubirch.com'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
