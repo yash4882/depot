@@ -6,18 +6,6 @@ class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
 
 
-  def pay_type_params
-    if order_params[:pay_type] == "Credit card"
-      params.require(:order).permit(:credit_card_number, :expiration_date)
-    elsif order_params[:pay_type] == "Check"
-      params.require(:order).permit(:routing_number, :account_number)
-    elsif order_params[:pay_type] == "Purchase order"
-      params.require(:order).permit(:po_number)
-    else
-      {}
-    end
-  end
-
   # GET /orders or /orders.json
   def index
     @orders = Order.all
@@ -94,6 +82,18 @@ class OrdersController < ApplicationController
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?
         redirect_to store_index_url, notice: 'Your cart is empty'
+      end
+    end
+
+    def pay_type_params
+      if order_params[:pay_type] == "Credit card"
+        params.require(:order).permit(:credit_card_number, :expiration_date)
+      elsif order_params[:pay_type] == "Check"
+        params.require(:order).permit(:routing_number, :account_number)
+      elsif order_params[:pay_type] == "Purchase order"
+        params.require(:order).permit(:po_number)
+      else
+        {}
       end
     end
 
