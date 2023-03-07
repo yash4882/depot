@@ -45,10 +45,10 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
+        # ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
         # @order.charge!(pay_type_params)
-        # OrderMailer.received(@order).deliver_later 
-        format.html { redirect_to payments_create_url(locale: I18n.locale),notice: I18n.t('.thanks') }
+        OrderMailer.received(@order).deliver_now
+        format.html { redirect_to payments_create_url, notice: 'thanks' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
