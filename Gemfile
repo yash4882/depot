@@ -75,5 +75,7 @@ group :test do
 end
 
 
-gem 'ransack'
+
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'kaminari'

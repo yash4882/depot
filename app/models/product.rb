@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  paginates_per 3
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
 
