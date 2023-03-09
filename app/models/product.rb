@@ -12,6 +12,10 @@ class Product < ApplicationRecord
 }
   # validates :title, :description, :image_url, presence: true 
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["title"]
+  end
+
   private
   def ensure_not_referenced_by_any_line_item
     unless line_items.empty?
