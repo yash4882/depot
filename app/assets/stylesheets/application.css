@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.cross_btn{
+    border-radius: 100%;
+    background: #b2f8d3fa;
+    width: 20px;
+    height: 20px;
+    display: block;
+    line-height: 18px;
+    text-align: center;
+}

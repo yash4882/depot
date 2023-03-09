@@ -9,6 +9,6 @@
   <td class="text-right font-bold">
     <%= number_to_currency(line_item.total_price) %> 
   </td>
-  <td><%= link_to 'x', item_delete_line_item_url(line_item) %></td>
+  <td><%= link_to 'x', item_delete_line_item_url(line_item), class: "cross_btn"  %></td>
   </tr>
 
