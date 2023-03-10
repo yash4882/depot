@@ -14,8 +14,9 @@ class StoreController < ApplicationController
       @q = Product.ransack(params[:q])
       @products= @q.result(distinct: true)
       if params[:q].blank?
-        @products = Product.order(:title)
+        @products = Product.order(:title).page(params[:page])
       end
+      @products = @products.order('created_at DESC').page(params[:page]).per(3)
     end
   end
 end
