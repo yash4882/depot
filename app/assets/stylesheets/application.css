@@ -31,3 +31,8 @@
 .product_search input{
     border-radius: 27px;
 }
+.product_search button{
+    position: absolute;
+    right: 15px;
+    top: 9px;
+}
