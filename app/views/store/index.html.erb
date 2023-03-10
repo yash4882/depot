@@ -1,10 +1,10 @@
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, url: store_index_url do |f| %>
   <%= f.search_field :title_cont, placeholder:" Search" %>
   <%= button_tag do %>
     <i class="bi bi-search"></i>  
   <% end %>
+    <%#= f.submit %>
 <% end %>
-
 
 <div class="w-full">
   <%= render 'notice' %>
@@ -23,6 +23,6 @@
     <% end %>
   </ul>
   <div class="text-right mb-6">
-    <%= paginate @products %>
+    <%#= paginate @products %>
   </div>
 </div>
