@@ -1,0 +1,59 @@
+hi:
+  hello: "Hello world"
+
+  layouts:
+    application:
+      title: "व्यावहारिक बुकशेल्फ़"
+      home: "घर"
+      questions: "प्रशन"
+      news: "समाचार"
+      contact: "संपर्क"
+
+  store:
+    index:
+      title_html: "Your Pragmatic बुकशेल्फ़"
+    product:
+      add_html: "कार्ट में जोड़ें"
+
+  carts:
+    cart:
+      title: "आपकी कार्ट"
+      empty: "खाली कार्ट"
+      checkout: "चेक आउट"
+
+  number:
+    currency:
+      format:
+        unit: "रूपया"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
+
+  orders:
+    new:
+      legend: "कृपया अपना विवरण दर्ज करें"
+    form:
+      name: "नाम"
+      address_html: "पता"
+      email: "ईमेल"
+      pay_type: "के साथ भुगतान करें"
+      pay_prompt_html: "कोई भुगतान विधि चुनें"
+      submit: "आदेश करें"
+
+    pay_types:
+      "Check": "चेक"
+      "Credit card": "क्रेडिट कार्ड"
+      "Purchase order": "आदेश करें"
+    check:
+      routing_number: "Routing"
+      account_number: "Account"
+   
+    cc:
+      cc_number: "CC"
+      expiration_date: "Expiry"
+    po:
+      po_number: "PO"
+
+    thanks: "आपके ऑर्डर के लिए धन्यवाद"
+
