@@ -38,4 +38,8 @@ Rails.application.routes.draw do
   get 'store/questions', to: 'store#questions'
   get 'store/news', to: 'store#news'
 
+  resources :products do
+    resources :comments
+  end
+
 end
