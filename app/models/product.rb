@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   # paginates_per 1
   has_many :line_items
-  before_destroy :ensure_not_referenced_by_any_line_item
+  # before_destroy :ensure_not_referenced_by_any_line_item
 
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true

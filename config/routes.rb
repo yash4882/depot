@@ -34,4 +34,8 @@ Rails.application.routes.draw do
 
   post 'payments/create', to: 'payments#create'
   get 'payments/create', to: 'payments#create'
+  get 'store/contact', to: 'store#contact'
+  get 'store/questions', to: 'store#questions'
+  get 'store/news', to: 'store#news'
+
 end

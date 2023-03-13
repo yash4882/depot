@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     if params[:q].blank?
       @products = Product.order(:title).page(params[:page])
     end
-    @products = @products.order('created_at DESC').page(params[:page]).per(3)
+    @products = @products.order('created_at DESC').page(params[:page]).per(4)
   end
 
   # GET /products/1 or /products/1.json
