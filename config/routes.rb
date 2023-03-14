@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :carts
-  resources :products
+  # resources :products
 
   scope '(:locale)' do
     resources :orders

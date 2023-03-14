@@ -1,8 +1,9 @@
 class Product < ApplicationRecord
   has_many :comments
 
-  validates :title, presence: true
+  validates :commenter, presence: true
   validates :body, presence: true, length: { minimum: 10 }
+  
   # paginates_per 1
   has_many :line_items
   # before_destroy :ensure_not_referenced_by_any_line_item

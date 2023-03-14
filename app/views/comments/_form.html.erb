@@ -1,0 +1,11 @@
+<%= form_with model: [ @product, @product.comments.build ] do |form| %>
+  <p class="mt-3"> 
+    <%= form.text_field :commenter, placeholder: "Name" %>
+  </p>
+  <p class="mt-3">
+    <%= form.text_area :body, placeholder: "Give Your Review Here" %>
+  </p>
+  <p class="mt-3">
+    <button class="bg-green-500 hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring focus:ring-green-300 p-2 rounded-lg"><%= form.submit " Submit " %></button>
+  </p>
+<% end %>
